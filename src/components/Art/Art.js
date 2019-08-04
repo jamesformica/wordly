@@ -1,16 +1,32 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 
-import useTriangeFarm from '../../hooks/useTriangleFarm'
+import useShapeFarm from '../../hooks/useShapeFarm'
+import Circle from './components/Circle/Circle'
+import Square from './components/Square/Square'
 import Triangle from './components/Triangle/Triangle'
 import { Wrapper } from './_Styles'
 
+const SHAPE_MAPPING = {
+  'circle': Circle,
+  'triangle': Triangle,
+  'square': Square,
+}
+
 const Art = () => {
   const _canvas = useRef()
-  const triangles = useTriangeFarm(_canvas)
+  const [shapes, shape] = useShapeFarm(_canvas)
+
+  const Shape = SHAPE_MAPPING[shape]
+
+  useEffect(() => {
+    const { width, height } = _canvas.current.getBoundingClientRect()
+    _canvas.current.style.width = `${width}px`
+    _canvas.current.style.height = `${height}px`
+  })
 
   return (
     <Wrapper ref={_canvas}>
-      {triangles.map((t, i) => <Triangle key={`${t.id}-${i}`} {...t} />)}
+      {shapes.map((t, i) => <Shape key={`${t.id}-${i}`} {...t} />)}
     </Wrapper>
   )
 }

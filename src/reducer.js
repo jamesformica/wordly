@@ -2,6 +2,7 @@ export const DEFAULT_STATE = {
   isEditing: true,
   title: '',
   narative: '',
+  shape: 'circle',
 }
 
 const reducer = (state, action) => {
@@ -12,6 +13,8 @@ const reducer = (state, action) => {
       return { ...state, narative: action.narative }
     case 'TOGGLE_EDIT':
       return { ...state, isEditing: action.isEditing || !state.isEditing }
+    case 'SET_SHAPE':
+      return { ...state, shape: action.shape }
     default:
       return state
   }

@@ -12,8 +12,8 @@ const Document = () => {
 
   return (
     <Wrapper>
-      <Title />
       <Edit />
+      <Title />
       {isEditing ? <Editor /> : <Narative />}
     </Wrapper>
   )

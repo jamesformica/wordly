@@ -12,3 +12,8 @@ export const updateNarative = narative => ({
   type: 'NARATIVE_UPDATE',
   narative,
 })
+
+export const setShape = shape => ({
+  type: 'SET_SHAPE',
+  shape,
+})
