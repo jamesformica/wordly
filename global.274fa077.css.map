@@ -1,0 +1,1 @@
+{"version":3,"sources":["global.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,6BACF,CAEA,EACE,qBACF","file":"global.274fa077.css","sourceRoot":"..","sourcesContent":["body {\n  margin: 0;\n  font-family: 'Crimson Pro', serif;\n}\n\n* {\n  box-sizing: border-box;\n}"]}
