@@ -14,7 +14,7 @@ const Title = () => {
       type="text"
       onChange={onChange}
       defaultValue={title}
-      placeholder="Narative title"
+      placeholder="Narrative title"
     />
   )
 }
